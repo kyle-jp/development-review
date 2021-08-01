@@ -1,5 +1,0 @@
----
-# tasks file for webapp 
-- copy: 
-    content: "{{ message }} (version {{ version }})\n" 
-    dest: /var/www/html/index.html
