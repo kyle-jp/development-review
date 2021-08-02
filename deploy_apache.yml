@@ -1,5 +1,5 @@
 - name: Ensure Apache is deployed 
-  hosts: web servers 
+  hosts: web_servers 
   force_handlers: True 
   gather_facts: no 
   
