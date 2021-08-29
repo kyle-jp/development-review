@@ -3,7 +3,7 @@
 #------------------------------------------------------------
 global 
     #Send events/messages to rsyslog server. 
-    log 127.0.0.1:514 local0 {{ haproxy_log_level }}
+    log 127.0.0.1 local0 {{ haproxy_log_level }}
 
     chroot   /var/lib/haproxy 
     pidfile  /var/run/haproxy.pid
@@ -11,9 +11,6 @@ global
     user     haproxy
     group    haproxy
     daemon 
-   
-   #state changes due to API calls are stored in this file. 
-   server-state-file /usr/local/haproxy/haproxy.state 
 
     # turn on stats unix socket 
     # required for the ansible haproxy module. 
@@ -35,17 +32,15 @@ defaults
     option forwardfor       except 127.0.0.0/8 
     option                  redispatch 
     retries                 3 
-    timeout http-request    lOs 
-    timeout queue           lm 
-    timeout connect         lOs
-    timeout client          lm 
-    timeout server          lm 
-    timeout http-keep-alive lOs 
-    timeout check           lOs
+    timeout http-request    10s 
+    timeout queue           1m 
+    timeout connect         10s
+    timeout client          1m 
+    timeout server          1m 
+    timeout http-keep-alive 10s 
+    timeout check           10s
     maxconn                 3000 
 
-    #Loads state changes from the state file. 
-    load-server-state-from-file global 
 #------------------------------------------------------------------
 # main frontend which proxys to the backends 
 #------------------------------------------------------------------

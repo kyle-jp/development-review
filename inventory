@@ -1,8 +1,6 @@
 [lb_servers]
-servera.lab.example.com
+rhel79-node1
 
-[web_servers] 
-server[b:c].lab.example.com
-
-[self]
-localhost
+[web_servers]
+rhel84-node1
+rhel84-node2 

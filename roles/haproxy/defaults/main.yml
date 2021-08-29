@@ -25,4 +25,4 @@ haproxy_backend_port: 80
 # The default is no defined backend servers. 
 haproxy_appservers: [] 
 # Socket used to communicate with haproxy service. DO NOT CHANGE 
-haproxy_socket: /var/run/haproxy.sock
+haproxy_socket: /var/lib/haproxy/stats

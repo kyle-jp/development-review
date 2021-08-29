@@ -8,7 +8,7 @@
     # on the "firewall" role. The 
     # "firewall" role requires a 
     # "firewall rules" variable be defined. 
-    - role: my role 
+    - role: my_role 
       firewall rules: 
       
         # Allow http requests from the 
@@ -19,4 +19,4 @@
         # Add the load balancer IP to 
         # the internal zone. 
         - zone: internal 
-          source: 172.25.250.10
+          source: 192.168.16.79
