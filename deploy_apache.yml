@@ -9,7 +9,7 @@
     # "firewall" role requires a 
     # "firewall rules" variable be defined. 
     - role: my_role 
-      firewall rules: 
+      firewall_rules: 
       
         # Allow http requests from the 
         # internal zone. 
